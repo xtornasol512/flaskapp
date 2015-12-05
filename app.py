@@ -30,10 +30,21 @@ def hello_template(name=None):
 
 @app.route('/home')
 def home():
-    user = {'nickname': 'Cxuko A Garzon'}  # fake user
-    return render_template('home.html',
-                           title='Hey you are at Home',
-                           user=user)
+    user = {'nickname': 'Cxuko A. Garzon'}  # fake user
+    posts = [  # fake array of posts
+        { 
+            'author': {'nickname': 'John'}, 
+            'body': 'Beautiful day in Portland!' 
+        },
+        { 
+            'author': {'nickname': 'Susan'}, 
+            'body': 'The Avengers movie was so cool!' 
+        }
+    ]
+    return render_template("home.html",
+                           title='Home',
+                           user=user,
+                           posts=posts)
 
 
 
