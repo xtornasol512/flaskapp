@@ -28,6 +28,13 @@ def show_post(post_id):
 def hello_template(name=None):
     return render_template('hello.html', name=name)
 
+@app.route('/home')
+def home():
+    user = {'nickname': 'Cxuko A Garzon'}  # fake user
+    return render_template('home.html',
+                           title='Hey you are at Home',
+                           user=user)
+
 
 
 
